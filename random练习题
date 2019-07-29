@@ -20,7 +20,7 @@ users(count,legth)
 '''
 说明：
   #此脚本中用到的知识点
-  '''
+  
   1、random
   random.sample()#多个字符中生成指定数量的随机字符：
   random.sample('zyxwvutsrqponmlkjihgfedcba',5)
@@ -36,7 +36,7 @@ users(count,legth)
   str = 'a,b,c.d,e'
   print(s.join(str))
 
-  '''
+
   print(random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()'))
   print(random.sample(string.ascii_letters,5))
   s = '-'
