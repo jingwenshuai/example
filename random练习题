@@ -1,0 +1,47 @@
+'''
+你是一个高级测试工程师，现在要做性能测试，需要你写一个函数，批量生成一些注册使用的账号。
+1、产生的账号是以@163.com结尾，长度由用户输，产生多少条也由用户输入，
+2、用户名不能重复，用户名必须由大写字母、小写字母、数字组成
+'''
+
+import random,string
+
+def users(count,legth):
+    with open('users.txt','w') as f:
+        for i in range(count):
+            str1 = ''.join(random.sample(string.ascii_letters,legth-1))
+            str2 = ''.join(random.sample(string.digits,3))
+            f.write(str1 + str2 + '@163.com' + '\n')
+count = int(input('请输入需要产生邮箱的个数:').strip())
+legth = int(input('请输入邮箱长度:').strip())
+users(count,legth)
+
+
+'''
+说明：
+  #此脚本中用到的知识点
+  '''
+  1、random
+  random.sample()#多个字符中生成指定数量的随机字符：
+  random.sample('zyxwvutsrqponmlkjihgfedcba',5)
+  
+  2、string
+  string.digits#所有数字
+  string.ascii_letters#大写字母+小写字母
+  string.ascii_lowercase#所有小写字母
+  string.ascii_uppercase#所有大写字母
+  
+  3、.join()#将列表中的元素以指定的字符连接生成一个新的字符串
+  s = '-'
+  str = 'a,b,c.d,e'
+  print(s.join(str))
+
+  '''
+  print(random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()'))
+  print(random.sample(string.ascii_letters,5))
+  s = '-'
+  str = ('a','b','c','d','e')
+  print(s.join(str))
+'''
+
+
